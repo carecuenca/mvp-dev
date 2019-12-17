@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>mvp.dev - Where Startup MVPs Begin</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
+	<link rel='icon' href='i/favicon.ico' type='image/x-icon'/ >
+
+	<!-- jQuery Plugins -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style2.css">
+
+	<!-- For Text Editor Plugin -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.11/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<!-- Import Fontawesome Icons-->
+	<script src="https://kit.fontawesome.com/efe556d187.js"></script>
+</head>
+    
+<body>
+	<section id="nav-bar">
+		<!-- Navigation Header -->  
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="index.html"><img src="i/logo-mvp.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa fa-bars"></i>
+			</button>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="pricing.html">Pricing</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#examples">Examples</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#mvp_template">MVP Template</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#faqs">Faqs</a>
+					</li>
+					<!-- Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						MVP Services
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="what-is-mvp.html">What is MVP</a>
+							<a class="dropdown-item" href="mvp-model.html">MVP Model</a>
+                        	<a class="dropdown-item" href="mvp-process.html">MVP Process</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://search.startupfactory.tools/version-test?debug_mode=true">Free Resourse Search</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#contactus">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+
+	<section class="container">
+		<div class="col-md-12 text-center mt-3">
+			<h4 class="promo-title">Create a Blog Post</h4>
+		</div>
+		<div class="card mt-3">
+			<div class="card-body">
+				<span>Cover Photo</span>
+				<div class="text-center">
+					<div class="alert"></div>
+					<img id="image-upload" src="i/upload-photo.png" alt="your image" title='' class="img-fluid"/>
+					<div class="input-group mt-2"> 
+						<div class="custom-file">
+							<input type="file" id="inputGroupFile01" class="imgInp custom-file-input" aria-describedby="inputGroupFileAddon01">
+							<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group mt-3">
+					<span>Blog Title</span>
+					<input class="form-control" type="text" name="name" placeholder="Title" required>
+				</div>
+				<div class="form-group mt-3">
+					<label for="exampleFormControlSelect1">Category</label>
+					<select class="form-control" id="exampleFormControlSelect1">
+						<option disabled selected>Select Category</option>
+						<option>Category 1</option>
+						<option>Category 2</option>
+						<option>Category 3</option>
+						<option>Category 4</option>
+					</select>
+				</div>
+				<div>
+					<div class="form-group">
+						<span>Content</span>
+						<textarea name="content" id="txtEditor"></textarea>
+					</div>
+				</div>
+				<button class="primary-button mt-2">Submit</button>
+			</div>
+			
+		</div>
+		
+
+	</section>
+
+    
+    <!--------footer-------->
+	<footer class="footer padding_top55 padding_bottom60">
+		<div class="container nopadding">
+			<div class="flex justify_between inner">
+				<div class="top5 block block_left text-center text-md-right text-lg-left">
+					<a href="https://bituin.tech" target="_blank" class="font14 semibold uppercase spacing15 link dark_blue right30">A Bituin Company</a>
+				</div>
+				<div class="block block_center text-center">
+				</div>
+				<div class="top5 block block_right text-center text-md-left text-lg-right">
+					<a href="http://bituin.tech/aboutus/" target="_blank" class="font14 semibold uppercase spacing15 link dark_blue left30">About</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+    
+</body>
+    <!-- Script for Image Preview -->
+    <script>
+		$("#inputGroupFile01").change(function(event) {  
+			readURL(this);    
+		});
+		function readURL(input) {    
+			if (input.files && input.files[0]) {   
+			var reader = new FileReader();
+			var filename = $("#inputGroupFile01").val();
+			filename = filename.substring(filename.lastIndexOf('\\')+1);
+			reader.onload = function(e) {
+				debugger;      
+				$('#image-upload').attr('src', e.target.result);
+				$('#image-upload').hide();
+				$('#image-upload').fadeIn(500);      
+				$('.custom-file-label').text(filename);             
+			}
+			reader.readAsDataURL(input.files[0]);    
+			} 
+		}
+	</script>
+	<!-- /jQuery Plugins and Script for Image Preview -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs4-summernote@0.8.10/dist/summernote-bs4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('textarea').summernote({
+                height: 300,   //set editable area's height
+            });
+        });
+    </script>
+</html>
